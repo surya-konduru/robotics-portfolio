@@ -42,7 +42,7 @@ The controller was tested on four different predefined trajectories:
 
 Tests basic path tracking and convergence toward a linear reference path.
 
-![Straight Line](screenshots/straight_line.png)
+![Straight Line](screenshots/straight_line_correct.png)
 
 ### 2. S-Curve
 
@@ -83,7 +83,7 @@ Pure Pursuit/
 ├── figure8.py
 │
 ├── screenshots/
-│   ├── straight_line.png
+│   ├── straight_line_correct.png
 │   ├── S.png
 │   ├── circle.png
 │   └── eight.png
