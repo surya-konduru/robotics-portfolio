@@ -1,4 +1,4 @@
-# Suri — Robotics & AI Portfolio
+# Surya — Robotics & AI Portfolio
 
 Second-year Robotics and AI engineering student building projects in **robotics, autonomous systems, control, embedded systems, and AI**.
 
@@ -6,7 +6,7 @@ I'm particularly interested in how software, electronics, sensors, and control s
 
 ## Projects
 
-### 🚗 Pure Pursuit Path Tracking Simulation
+### Pure Pursuit Path Tracking Simulation
 
 A Python-based simulation of the Pure Pursuit path-tracking algorithm, tested on straight-line, S-curve, circular, and figure-eight trajectories.
 
