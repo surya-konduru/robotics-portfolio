@@ -1,0 +1,197 @@
+<?xml version="1.0"?>
+
+<sdf version="1.9">
+
+  <model name="rover">
+
+    <static>false</static>
+
+    <pose>0 0 0 0 0 0</pose>
+
+    <!-- ========================= -->
+    <!-- BASE LINK -->
+    <!-- ========================= -->
+
+    <link name="base_link">
+
+      <inertial>
+        <mass>5.0</mass>
+
+        <inertia>
+          <ixx>0.10</ixx>
+          <iyy>0.20</iyy>
+          <izz>0.20</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+
+      </inertial>
+
+      <collision name="base_collision">
+        <geometry>
+          <box>
+            <size>0.5 0.3 0.1</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="base_visual">
+        <geometry>
+          <box>
+            <size>0.5 0.3 0.1</size>
+          </box>
+        </geometry>
+      </visual>
+
+    </link>
+
+    <!-- ========================= -->
+    <!-- LEFT WHEEL -->
+    <!-- ========================= -->
+
+    <link name="left_wheel">
+
+      <pose>0 0 0 1.5708 0 0</pose>
+
+      <inertial>
+
+        <mass>0.5</mass>
+
+        <inertia>
+          <ixx>0.001</ixx>
+          <iyy>0.001</iyy>
+          <izz>0.001</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+
+      </inertial>
+
+      <collision name="left_collision">
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.02</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name="left_visual">
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.02</length>
+          </cylinder>
+        </geometry>
+      </visual>
+
+    </link>
+
+    <!-- ========================= -->
+    <!-- RIGHT WHEEL -->
+    <!-- ========================= -->
+
+    <link name="right_wheel">
+
+      <pose>0 0 0 1.5708 0 0</pose>
+
+      <inertial>
+
+        <mass>0.5</mass>
+
+        <inertia>
+          <ixx>0.001</ixx>
+          <iyy>0.001</iyy>
+          <izz>0.001</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+
+      </inertial>
+
+      <collision name="right_collision">
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.02</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name="right_visual">
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.02</length>
+          </cylinder>
+        </geometry>
+      </visual>
+
+    </link>
+
+    <!-- ========================= -->
+    <!-- LEFT WHEEL JOINT -->
+    <!-- ========================= -->
+
+    <joint name="left_wheel_joint" type="revolute">
+
+      <parent>base_link</parent>
+      <child>left_wheel</child>
+
+      <pose>0 0.15 0 0 0 0</pose>
+
+      <axis>
+
+        <xyz>0 1 0</xyz>
+
+        <limit>
+          <lower>-1000000</lower>
+          <upper>1000000</upper>
+          <effort>1000000</effort>
+          <velocity>1000</velocity>
+        </limit>
+
+      </axis>
+
+    </joint>
+
+    <!-- ========================= -->
+    <!-- RIGHT WHEEL JOINT -->
+    <!-- ========================= -->
+
+    <joint name="right_wheel_joint" type="revolute">
+
+      <parent>base_link</parent>
+      <child>right_wheel</child>
+
+      <pose>0 -0.15 0 0 0 0</pose>
+
+      <axis>
+
+        <xyz>0 1 0</xyz>
+
+        <limit>
+          <lower>-1000000</lower>
+          <upper>1000000</upper>
+          <effort>1000000</effort>
+          <velocity>1000</velocity>
+        </limit>
+
+      </axis>
+
+    </joint>
+    <plugin
+      filename="libignition-gazebo6-diff-drive-system.so"
+      name="ignition::gazebo::systems::DiffDrive">
+      <left_joint>left_wheel_joint</left_joint>
+      <right_joint>right_wheel_joint</right_joint>
+      <wheel_separation>0.30</wheel_separation>
+      <wheel_radius>0.05</wheel_radius>
+    </plugin>
+
+  </model>
+
+</sdf>
