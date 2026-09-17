@@ -16,23 +16,13 @@ A Python-based simulation of the Pure Pursuit path-tracking algorithm, tested on
 
 ---
 
-### 🤖 CEAM ROS2 Rover
+### ROS2 Rover
 
 ROS2-based mobile robotics work completed through CEAM, exploring robot control, ROS2 nodes, and autonomous robotics concepts.
 
 **Tech:** ROS2 · Python · Robotics
 
 *Project documentation being added.*
-
----
-
-### 🛰️ Project Icarus
-
-Student satellite project involving work on a ground-station system.
-
-**Tech:** Python · Embedded/Systems · Aerospace
-
-[View Project](https://github.com/surya-konduru/icarus)
 
 ---
 
